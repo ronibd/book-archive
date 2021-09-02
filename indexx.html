@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book archive</title>
+    <style>
+        #spinner {
+            display: none;
+        }
+    </style>
 
     <!--------- bootstrap--css--- for style ------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,9 +35,17 @@
         <input id="search-field" type="text" class="form-control mx-2"
             placeholder="Type Your book Name and find Your Book" aria-label="Recipient's username"
             aria-describedby="button-addon2">
-        <button onclick="searchBook()" class="btn btn-outline-secondary bg-warning" type="button"
+        <button onclick="searchBook()" class="btn btn-outline-secondary bg-primary text-dark" type="button"
             id="button-search">Search</button>
+
     </div>
+
+    <div class="d-flex justify-content-center text-primary">
+        <div id="spinner" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
 
 
     <!-- -----------found items ----------------------->

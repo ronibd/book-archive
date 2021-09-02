@@ -1,13 +1,26 @@
+/*spinner section */
+const togglespinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+
+
 const searchBook = () => {
     const searchField = document.getElementById('search-field');
     document.getElementById('error').textContent = '';
     const searchText = searchField.value;
+    togglespinner('block');
+    togglesearchResult('none')
+
     /* console.log(url) */
 
     if (searchField.value === '') {
         document.getElementById('error').innerHTML = `
-        <h3 class="text-danger text-center">Please Type The Book Name!!</h3>
+        <h3 class="text-danger text-center">Please Type The Book Name!</h3>
         `;
+    }
+    else if (searchField.value === 404) {
+        document.getElementById('error').innerHTML = `
+        <h3 class="text-danger text-center">Please enter a valid name</h3>`
     }
     else {
         const url = `https://openlibrary.org/search.json?q=${searchText}`;
@@ -39,7 +52,7 @@ const displaySearchResult = data => {
 
         div.innerHTML = `
                 <div class="card h-50">
-                    <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+                    <img class="w-50" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title text-.dark ">Book Name: ${book.title}</h6>
                         <hr>
@@ -52,7 +65,8 @@ const displaySearchResult = data => {
                 </div>
         </div>
         `;
-        searchResult.appendChild(div)
+        searchResult.appendChild(div);
+        togglespinner('none');
 
     });
 

@@ -1,16 +1,11 @@
-/*spinner section */
 const togglespinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
-
-
 const searchBook = () => {
     const searchField = document.getElementById('search-field');
     document.getElementById('error').textContent = '';
     const searchText = searchField.value;
     togglespinner('block');
-    togglesearchResult('none')
-
     /* console.log(url) */
 
     if (searchField.value === '') {

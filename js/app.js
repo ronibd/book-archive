@@ -47,7 +47,7 @@ const displaySearchResult = data => {
 
         div.innerHTML = `
                 <div class="card h-50">
-                    <img class="w-50" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+                    <img style="width: 350px ; height:250px" class="img-fluid" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title text-.dark ">Book Name: ${book.title}</h6>
                         <hr>

@@ -18,6 +18,7 @@ const searchBook = () => {
     else if (searchField.value === 404) {
         document.getElementById('error').innerHTML = `
         <h3 class="text-danger text-center">Please enter a valid name</h3>`
+        displaySearchResult('none')
     }
     else {
         const url = `https://openlibrary.org/search.json?q=${searchText}`;

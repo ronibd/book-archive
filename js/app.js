@@ -36,7 +36,7 @@ const displaySearchResult = data => {
     searchResult.innerHTML = '';
     const foundItems = document.getElementById('found-iems')
     foundItems.innerHTML = `
-    <h3 class="text-center text-success my-5">Found Result <span style='font-size:25px;'>&#128512;</span>: ${data.numFound}</h3>
+    <h3 class="text-center text-success my-5">Found Result : ${data.numFound}</h3>
     
     `
 
